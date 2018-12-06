@@ -8,21 +8,24 @@ public class Computer {
     private String getHDD() {
         return HDD;
     }
-    private String getRAM() {
+    public String getRAM() {
         return RAM;
     }
-    private boolean isGraphicsCardEnabled() {
+    private boolean getisGraphicsCardEnabled() {
         return isGraphicsCardEnabled;
     }
-    private boolean isBluetoothEnabled() {
+    public boolean getisBluetoothEnabled() {
         return isBluetoothEnabled;
     }
+    public String toString(){
+        return "HDD:"+HDD+" RAM:"+RAM+" isBlutooth"+isBluetoothEnabled;
+    }
 
-    Computer(ComputerBulider bulider){
-        this.HDD = bulider.HDD;
-        this.RAM = bulider.RAM;
-        this.isBluetoothEnabled = bulider.isBluetoothEnabled;
-        this.isGraphicsCardEnabled = bulider.isGraphicsCardEnabled;
+    Computer(ComputerBulider buliders){
+        this.HDD = buliders.HDD;
+        this.RAM = buliders.RAM;
+        this.isBluetoothEnabled = buliders.isBluetoothEnabled;
+        this.isGraphicsCardEnabled = buliders.isGraphicsCardEnabled;
     }
 
     static class ComputerBulider{
@@ -39,11 +42,11 @@ public class Computer {
             this.HDD = HDD;
         }
 
-        public ComputerBulider setGraphicsCardEnabled(Boolean isGraphicsCardEnabled){
+        ComputerBulider setGraphicsCardEnabled(Boolean isGraphicsCardEnabled){
             this.isGraphicsCardEnabled = isGraphicsCardEnabled;
             return this;
         }
-        public ComputerBulider setBluetoothEnabled(Boolean isBluetoothEnabled){
+        ComputerBulider setBluetoothEnabled(Boolean isBluetoothEnabled){
             this.isBluetoothEnabled = isBluetoothEnabled;
             return this;
         }
